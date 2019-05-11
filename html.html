@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Page Title</title>
+		<link rel="stylesheet" href="styles.css">
+	</head>
+	<body onload="start()">
+	
+	
+		<h1>This is a Heading</h1>
+		<p>This is a paragraph.</p>
+		
+		
+		<div id="addSongForm">
+		
+				fileName<br>
+					<input type="text" name="fileName" value="1.mp3" id="formFileName">
+					<br>
+				path<br>
+					<input type="text" name="path" value="D:\\" id="formPath">
+					<br>
+				name:<br>
+					<input type="text" name="name" value="asdg" id="formName">
+					<br>
+				artist:<br>
+					<input type="text" name="artist" value="IUAGS" id="formAritst">
+					<br><br>
+				  
+				<input type="button" value="Submit" onclick="expandSongs()">
+		</div>
+		
+		
+		
+		
+		<div id="songsBlock">
+			<table id="songsTable">
+				
+			</table>
+		</div>
+		
+	<div onload="start()" id="test"></div>
+	<script type="text/javascript" src="javascript.js"></script>
+	</body>
+</html>
