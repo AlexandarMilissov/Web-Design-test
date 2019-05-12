@@ -2,43 +2,66 @@
 <html>
 	<head>
 		<title>Page Title</title>
-		<link rel="stylesheet" href="styles.css">
+		<link rel="stylesheet" type="text/css" href="styles.css">
 	</head>
 	<body onload="start()">
 	
-	
-		<h1>This is a Heading</h1>
-		<p>This is a paragraph.</p>
-		
-		
-		<div id="addSongForm">
-		
-				fileName<br>
-					<input type="text" name="fileName" value="1.mp3" id="formFileName">
-					<br>
-				path<br>
-					<input type="text" name="path" value="D:\\" id="formPath">
-					<br>
-				name:<br>
-					<input type="text" name="name" value="asdg" id="formName">
-					<br>
-				artist:<br>
-					<input type="text" name="artist" value="IUAGS" id="formAritst">
-					<br><br>
-				  
-				<input type="button" value="Submit" onclick="expandSongs()">
-		</div>
-		
-		
-		
-		
-		<div id="songsBlock">
-			<table id="songsTable">
+		<table id = "mainStructure">
+			<tr id="mainRow1">
+				<td id="newSong">		
+					<div id="addSongForm">
 				
-			</table>
-		</div>
+						fileName<br>
+							<input type="text" name="fileName" value="1.mp3" id="formFileName">
+							<br>
+						path<br>
+							<input type="text" name="path" value="D:\\" id="formPath">
+							<br>
+						name:<br>
+							<input type="text" name="name" value="asdg" id="formName">
+							<br>
+						artist:<br>
+							<input type="text" name="artist" value="IUAGS" id="formAritst">
+							<br><br>
+						
+							
+						<input type="button" value="Submit" onclick="expandSongs()">
+					</div>	
+				</td>
+				<td id="smt">
+				</td>
+			</tr>
+			<tr id="mainRow2">
+				<td id="albums">
+					<div id="albumsBlock">
+						Album:<br>
+								<input type="text" name="newAlbum" value="never" id="newAlbum">
+						<button type="button" onclick="createAlbum()">new album</button>
+						<table id="albumsTable">
+							<tr>
+								<td><button type="button" onclick="loadAllSongs()">All</button></td>
+							</tr>
+						</table>
+					</div>	
+				</td>
+				<td id="songs">
+					<div id="addSongToAlbum">
+						<select name="songToAdd" id="songToAddList"></select>
+						<select name="addToAlbum" id="albumToAddList"></select>
+						<button type="button" onclick="addSongToAlbum()">0</button>
+					</div>
+						
+					
+					<div id="songsBlock">
+						<table id="songsTable"></table>
+					</div>
+				</td>
+			</tr>
+	
+
+		</table>
 		
-	<div onload="start()" id="test"></div>
+		
 	<script type="text/javascript" src="javascript.js"></script>
 	</body>
 </html>
