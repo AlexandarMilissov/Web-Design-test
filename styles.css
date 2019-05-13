@@ -1,5 +1,7 @@
+
 body {
   background-color: powderblue;
+  height:100%;
 }
 
 #mainStructure{
@@ -10,5 +12,45 @@ body {
 }
 
  #newSong,#smt,#albums,#songs{
+	border-style: solid;
+}
+
+#addSongForm{
+	height:200px;
+	width:180px;
+	position:fixed;
+	top:0;
+	left:0;
+	border-style: solid;
+}
+
+#albumsBlock{
+	position:fixed;
+	top:210px;
+	left:0;
+	width:260px;
+	height:1100px;
+	overflow-x:auto;
+	overflow-y:auto;
+	
+	border-style: solid;
+}
+
+#songsBlock{
+	position:fixed;
+	top:210px;
+	left:270px;
+	height:1100px;
+	width:2250px;
+	border-style: solid;
+	overflow-y:auto;
+}
+
+#player{
+	position:fixed;
+	top:0;
+	left:190px;
+	height:200px;
+	width:2330px;
 	border-style: solid;
 }

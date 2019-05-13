@@ -1,4 +1,4 @@
-var audio = new Audio();
+var audio = document.getElementById("Audio");
 var isPlaying = false;
 var currentSong = -1;
 var nextFreeID = -1;
@@ -24,11 +24,40 @@ function play(songID)
 		currentSong = songID;
 		var fromStorage = localStorage.getItem("Song" + songID.toString());
 		var song = JSON.parse(fromStorage);
-		audio = new Audio("file:///" + song.path);
+		var path = "file:///" + song.path;
+		document.getElementById("audioSource").setAttribute("src",path);
+		audio.load();
 		audio.play();
 		isPlaying = true;
 	}
 }
+
+var songsInAlbum = [];
+audio.onended = function randomNextSong()
+{
+	
+	
+	if(songsInAlbum.length == 0)
+	{
+		return;
+	}
+	var random = songsInAlbum[Math.floor((Math.random() * songsInAlbum.length))];
+	if(random == currentSong)
+	{
+		randomNextSong();
+		return;
+	}
+	
+	var fromJSON = localStorage.getItem("Song"+random);
+	var song = JSON.parse(fromJSON);
+	if(song == null)
+	{
+		randomNextSong();
+		return;
+	}
+	
+	play(random);
+};
 
 function expandSongs()
 {
@@ -182,6 +211,7 @@ function loadSongsFromAlbum(album)
 					continue;
 				}
 				loadSong(song.path,song.name,song.artist,j);
+				songsInAlbum.push(song.id);
 			}
 		}
 	}
@@ -223,6 +253,7 @@ function loadAllSongs()
 			continue;
 		}
 		loadSong(song.path,song.name,song.artist,i);
+		songsInAlbum.push(song.id);
 	}
 }
 

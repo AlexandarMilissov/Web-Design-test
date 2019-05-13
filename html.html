@@ -5,63 +5,58 @@
 		<link rel="stylesheet" type="text/css" href="styles.css">
 	</head>
 	<body onload="start()">
+			
+			
+			
+			
+		<div id="addSongForm">
 	
-		<table id = "mainStructure">
-			<tr id="mainRow1">
-				<td id="newSong">		
-					<div id="addSongForm">
+			fileName<br>
+				<input type="text" name="fileName" value="1.mp3" id="formFileName">
+				<br>
+			path<br>
+				<input type="text" name="path" value="D:\\" id="formPath">
+				<br>
+			name:<br>
+				<input type="text" name="name" value="asdg" id="formName">
+				<br>
+			artist:<br>
+				<input type="text" name="artist" value="IUAGS" id="formAritst">
+				<br><br>
+			
 				
-						fileName<br>
-							<input type="text" name="fileName" value="1.mp3" id="formFileName">
-							<br>
-						path<br>
-							<input type="text" name="path" value="D:\\" id="formPath">
-							<br>
-						name:<br>
-							<input type="text" name="name" value="asdg" id="formName">
-							<br>
-						artist:<br>
-							<input type="text" name="artist" value="IUAGS" id="formAritst">
-							<br><br>
-						
-							
-						<input type="button" value="Submit" onclick="expandSongs()">
-					</div>	
-				</td>
-				<td id="smt">
-				</td>
-			</tr>
-			<tr id="mainRow2">
-				<td id="albums">
-					<div id="albumsBlock">
-						Album:<br>
-								<input type="text" name="newAlbum" value="never" id="newAlbum">
-						<button type="button" onclick="createAlbum()">new album</button>
-						<table id="albumsTable">
-							<tr>
-								<td><button type="button" onclick="loadAllSongs()">All</button></td>
-							</tr>
-						</table>
-					</div>	
-				</td>
-				<td id="songs">
-					<div id="addSongToAlbum">
-						<select name="songToAdd" id="songToAddList"></select>
-						<select name="addToAlbum" id="albumToAddList"></select>
-						<button type="button" onclick="addSongToAlbum()">0</button>
-					</div>
-						
-					
-					<div id="songsBlock">
-						<table id="songsTable"></table>
-					</div>
-				</td>
-			</tr>
+			<input type="button" value="Submit" onclick="expandSongs()">
+		</div>	
 	
-
-		</table>
+		<div id="albumsBlock">
+			Album:<br>
+					<input type="text" name="newAlbum" value="never" id="newAlbum">
+			<button type="button" onclick="createAlbum()">new album</button>
+			<table id="albumsTable">
+				<tr>
+					<td><button type="button" onclick="loadAllSongs()">All</button></td>
+				</tr>
+			</table>
+		</div>	
+	
+			
 		
+		<div id="songsBlock">
+			<div id="addSongToAlbum">
+				<select name="songToAdd" id="songToAddList"></select>
+				<select name="addToAlbum" id="albumToAddList"></select>
+				<button type="button" onclick="addSongToAlbum()">0</button>
+			</div>
+			<table id="songsTable"></table>
+		</div>
 		
+		<div id="player">
+			<audio id="Audio" controls>
+				<source id="audioSource" src="" type="audio/mp3">
+				Your browser does not support the audio element.
+			</audio>
+		</div>
+				
 	<script type="text/javascript" src="javascript.js"></script>
 	</body>
 </html>
